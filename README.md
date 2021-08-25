@@ -85,3 +85,16 @@ go to admin.py
   * python3 manage.py test todo.test_forms
   * python3 manage.py test todo.test_forms.testItemForm
   *  python3 manage.py test todo.test_forms.testItemForm.   test_fields_are_explicit_in_form_metaclass
+
+
+#### testing views
+ > class TestViews(TestCase):
+  
+    def test_get_todo_list(self):
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'todo/todo_list.html')
+  >
+ * python3 manage.py test todo.test_views
+
+ - ctrl / uncomments the highlighted code in py file
