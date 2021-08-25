@@ -113,3 +113,11 @@ go to admin.py
         item = Item.objects.create(name='Test Todo Item')
         self.assertFalse(item.done)
   >
+
+  ## coverage
+    to show you how much of your code has been tested
+     -  " pip3 install coverage "
+     - coverage run -- source=todo manage.py test
+     coverage report -to view report
+     coverage html
+     python3 -m http.server
