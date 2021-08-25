@@ -121,3 +121,11 @@ go to admin.py
      coverage report -to view report
      coverage html
      python3 -m http.server
+
+ ## heroku 
+ cli installation
+  * windows "curl https://cli-assets.heroku.com/install.sh | sh "
+  * heroku login 
+   * pip3 install psyccopg2-binary
+   * pip3 install gunicorn
+   * pip3 freeze --local > requirements.txt
