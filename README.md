@@ -74,3 +74,4 @@ go to admin.py
         return self.name "
 
 #### Rendering data
+##### views.py
