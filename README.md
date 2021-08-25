@@ -98,3 +98,18 @@ go to admin.py
  * python3 manage.py test todo.test_views
 
  - ctrl / uncomments the highlighted code in py file
+
+#### testing models
+ - python3 manage.py test todo.test_models
+
+  >
+    from django.test import TestCase
+     from .models import Item
+
+
+    class TestModels(TestCase):
+
+    def test_done_defaults_to_false(self):
+        item = Item.objects.create(name='Test Todo Item')
+        self.assertFalse(item.done)
+  >
