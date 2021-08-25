@@ -75,3 +75,13 @@ go to admin.py
 
 #### Rendering data
 ##### views.py
+
+
+# testing
+- in test.py create a test class and define a function
+ command - python3 manage.py test
+
+ or more specific test commands
+  * python3 manage.py test todo.test_forms
+  * python3 manage.py test todo.test_forms.testItemForm
+  *  python3 manage.py test todo.test_forms.testItemForm.   test_fields_are_explicit_in_form_metaclass
