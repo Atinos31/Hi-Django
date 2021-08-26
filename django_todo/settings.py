@@ -30,7 +30,7 @@ DEBUG = True
 # if development:
 #     ALLOWED_HOSTS + ['localhost']
 # else:
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://atinos31-django-todo-app.herokuapp.com/']
 
 
 # Application definition
