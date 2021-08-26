@@ -30,7 +30,7 @@ DEBUG = True
 # if development:
 #     ALLOWED_HOSTS + ['localhost']
 # else:
-ALLOWED_HOSTS = ['atinos31-django-todo-app.herokuapp.com']
+ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 
 # Application definition
@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 #     }
 # else:
 DATABASES = {
-        'default': dj_database_url.parse('postgres://ljvsrlzwjvtkzj:9034b305e5d95bd1a258a4b4deff25ca87e965afdff41391ae47f524d209f526@ec2-18-214-238-28.compute-1.amazonaws.com:5432/d580pu3nk499m1')
+        'default': dj_database_url.parse(os.environ.get('DATABASE-URL'))
 }
 
 # Password validation
