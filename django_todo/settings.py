@@ -13,6 +13,7 @@ import os
 import dj_database_url
 from pathlib import Path
 
+development = os.environ.get('DEVELOPMENT', False)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,7 +27,10 @@ SECRET_KEY = os.environ.get('SECRET-KEY', 'django-insecure-7&gx%bcu38af)(t#(x^n(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('HEROKU_HOST_NAME')]
+# if development:
+#     ALLOWED_HOSTS + ['localhost']
+# else:
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -75,15 +79,16 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+# if development:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
 #     }
-# }
-
+# else:
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get(DATABASE_URL))
+        'default': dj_database_url.parse('postgres://ljvsrlzwjvtkzj:9034b305e5d95bd1a258a4b4deff25ca87e965afdff41391ae47f524d209f526@ec2-18-214-238-28.compute-1.amazonaws.com:5432/d580pu3nk499m1')
 }
 
 # Password validation
